@@ -123,10 +123,8 @@
     cols.forEach(c => c.classList.toggle("is-active", c.dataset.key === key));
   };
 
-  // 기본 활성(첫번째 메뉴)
   if (items[0]) setActive(items[0].dataset.key);
 
-  // 메뉴에 마우스 올리면 열기 + 해당 컬럼 활성
   items.forEach(item => {
     item.addEventListener("mouseenter", () => {
       bar.classList.add("is-open");
@@ -135,16 +133,13 @@
     });
   });
 
-  // nav 영역(메뉴+드롭박스) 밖으로 나가면 닫기
   nav.addEventListener("mouseleave", () => {
     bar.classList.remove("is-open");
     bar.setAttribute("aria-hidden", "true");
   });
 
-  // 드롭박스 위에 있어도 유지(이미 nav 안이지만 안전장치)
   bar.addEventListener("mouseenter", () => {
     bar.classList.add("is-open");
     bar.setAttribute("aria-hidden", "false");
   });
 })();
-
