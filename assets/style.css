@@ -92,7 +92,6 @@ img{ max-width:100%; display:block; }
   gap: 24px;
 }
 
-}
 .brand__name{ font-weight:800; letter-spacing:-.02em; }
 .brand__sub{ font-size:.85rem; color:var(--muted); }
 
