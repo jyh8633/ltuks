@@ -411,7 +411,7 @@ img{ max-width:100%; display:block; }
 }
 
 .brand__logo {
-  height: 56px;        /* 필요하면 48~64px 사이로 조절 */
+  height: 48px;        /* 필요하면 48~64px 사이로 조절 */
   width: auto;
   display: block;
 }
