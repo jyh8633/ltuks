@@ -564,3 +564,51 @@ img{ max-width:100%; display:block; }
 .megaCol a + a{
   margin-top: 6px;
 }
+
+/* ===== 드롭박스 글자 겹침 해결: 세로 간격 + 패널 높이 확장 ===== */
+
+/* 드롭박스 전체 패딩(위아래) 늘려서 박스가 커지게 */
+.megaBar{
+  padding: 28px 0;           /* 기존 18px 0 보다 큼 */
+}
+
+/* 내부 컬럼 간격/폭 */
+.megaBar__inner{
+  gap: 28px;                 /* 컬럼 사이 간격 넓힘 */
+}
+
+/* 컬럼 자체 높이/여백 확보 */
+.megaCol{
+  min-height: 320px;         /* ✅ 세로 공간 확보 (겹침 방지) */
+  padding: 14px 0 14px 24px; /* 일반 컬럼 여백 증가 */
+}
+
+/* 주황(활성) 컬럼은 링크가 많아서 더 여유 줌 */
+.megaCol.is-active{
+  padding: 18px 16px;        /* ✅ 주황 영역 내부 여백 증가 */
+  min-height: 320px;
+}
+
+/* 메뉴 항목 줄간격 + 항목간 간격(겹침 방지 핵심) */
+.megaCol a{
+  line-height: 1.75;         /* ✅ 줄 높이 키움 */
+  padding: 10px 12px;        /* ✅ 클릭 영역 넓힘 */
+  margin: 2px 0;             /* ✅ 항목 사이 여백 */
+  white-space: nowrap;       /* 한 줄 유지 */
+  word-break: keep-all;
+}
+
+/* 주황 컬럼 링크는 더 또렷하게 */
+.megaCol.is-active a{
+  font-weight: 800;
+}
+
+/* 링크 hover 시 배경도 자연스럽게 */
+.megaCol a:hover{
+  background: #f6f6f6;
+}
+.megaCol.is-active a:hover{
+  background: rgba(255,255,255,.14);
+}
+
+.megaCol a{ display:block !important; }
