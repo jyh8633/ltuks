@@ -541,3 +541,26 @@ img{ max-width:100%; display:block; }
   .megaBar{ display:none !important; }
 }
 
+/* ===== 메가메뉴 가독성 개선 ===== */
+
+/* 전체 메가메뉴 폭 넓히기 */
+.megaBar__inner{
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+}
+
+/* 컬럼 내부 여백 넉넉하게 */
+.megaCol{
+  padding: 12px 0 12px 24px;
+}
+
+/* 메뉴 항목: 무조건 한 줄 */
+.megaCol a{
+  white-space: nowrap;     /* 줄바꿈 금지 */
+  word-break: keep-all;
+  line-height: 1.6;
+}
+
+/* 메뉴 사이 간격 넓히기 */
+.megaCol a + a{
+  margin-top: 6px;
+}
