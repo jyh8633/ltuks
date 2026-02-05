@@ -87,17 +87,14 @@ img{ max-width:100%; display:block; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.header__inner{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; gap:14px; }
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+  padding: 14px 0;
+}
 
-.brand{ display:flex; align-items:center; gap:12px; }
-.brand__mark{
-  width:42px; height:42px;
-  border-radius:14px;
-  background: linear-gradient(135deg, var(--primary), #1f6aa8);
-  display:grid; place-items:center;
-  color:white;
-  font-weight:800;
-  box-shadow: 0 10px 20px rgba(15,76,129,.25);
 }
 .brand__name{ font-weight:800; letter-spacing:-.02em; }
 .brand__sub{ font-size:.85rem; color:var(--muted); }
@@ -127,15 +124,18 @@ img{ max-width:100%; display:block; }
 .search button:hover{ background: var(--primary2); }
 
 .nav{
-  border-top: 1px solid var(--line);
-  background: rgba(255,255,255,.65);
+  border-top: 0;
+  background: transparent;
 }
+
 .nav__inner{
   display:flex;
   align-items:center;
-  gap:18px;
-  padding:10px 0;
+  gap: 18px;
+  padding: 0;              /* 줄바꿈 느낌 제거 */
+  justify-content:flex-end; /* 메뉴 오른쪽 정렬 */
 }
+
 .nav__item{
   padding:8px 10px;
   border-radius:12px;
@@ -474,4 +474,15 @@ img{ max-width:100%; display:block; }
 /* 모바일에서는 hover 메가메뉴 숨김 (햄버거로만) */
 @media (max-width: 620px){
   .mega{ display:none; }
+}
+
+.badge{
+  margin-left:6px;
+  font-size:.72rem;
+  font-weight:900;
+  color:white;
+  background:#ff6a00;
+  border-radius: 999px;
+  padding: 2px 6px;
+  line-height: 1;
 }
