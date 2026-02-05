@@ -538,11 +538,31 @@ img{ max-width:100%; display:block; }
   color:#ff6a00;
 }
 
-/* hover/focus 시 펼치기 */
-.gnb__item:hover .mega,
-.gnb__item:focus-within .mega{
-  display:block;
+/* ✅ 원하는 동작: hover시에만 열리고, 클릭으로 고정되지 않게 */
+.gnb__item:hover .mega{
+  display: block;
 }
+
+/* 클릭(포커스)로 고정되는 현상 방지 */
+.gnb__item:focus-within .mega{
+  display: none;
+}
+
+/* 드롭다운이 닫히지 않게 간격 줄이기 */
+.mega{
+  top: calc(100% + 4px);
+}
+
+/* (선택) 메뉴-드롭다운 사이 hover 브릿지 */
+.gnb__item::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top: 100%;
+  height: 10px;
+}
+
 
 /* 모바일에서는 hover 드롭다운 끄기 */
 @media (max-width: 900px){
