@@ -29,21 +29,73 @@
       </form>
     </div>
 
-    <!-- Nav -->
-    <nav class="nav" aria-label="주요 메뉴">
-      <div class="container nav__inner">
-        <a class="nav__item" href="#">협회소개</a>
-        <a class="nav__item" href="#">사업안내</a>
-        <a class="nav__item" href="#">회원기관</a>
-        <a class="nav__item" href="#notice">공지사항</a>
-        <a class="nav__item" href="#gallery">갤러리</a>
-        <a class="nav__item" href="#contact">오시는길</a>
+<nav class="nav" aria-label="주요 메뉴">
+  <div class="container nav__inner nav__inner--mega">
+    <div class="mega" id="megaNav">
+      <a class="nav__item" href="#" data-mega-open>협회소개</a>
+      <a class="nav__item" href="#" data-mega-open>회원기관 안내&소식</a>
+      <a class="nav__item" href="#" data-mega-open>게시판</a>
+      <a class="nav__item" href="#" data-mega-open>신청 발급</a>
+      <a class="nav__item" href="#" data-mega-open>자료실</a>
 
-        <button class="nav__hamburger" type="button" aria-label="메뉴 열기" aria-expanded="false">
-          ☰
-        </button>
+      <!-- 메가 메뉴 패널 -->
+      <div class="mega__panel" aria-hidden="true">
+        <div class="container mega__panelInner">
+          <div class="mega__grid">
+            <div class="mega__col">
+              <div class="mega__title">협회소개</div>
+              <a class="mega__link" href="#">인사말</a>
+              <a class="mega__link" href="#">비전&미션</a>
+              <a class="mega__link" href="#">연혁</a>
+              <a class="mega__link" href="#">조직도</a>
+              <a class="mega__link" href="#">주요사업</a>
+              <a class="mega__link" href="#">홍보영상</a>
+              <a class="mega__link" href="#contact">오시는 길</a>
+            </div>
+
+            <div class="mega__col">
+              <div class="mega__title">회원기관 안내&소식</div>
+              <a class="mega__link" href="#">사회복지관 소개</a>
+              <a class="mega__link" href="#">회원기관 리스트</a>
+              <a class="mega__link" href="#">회원기관 홍보</a>
+              <a class="mega__link" href="#">회원기관 소식</a>
+              <a class="mega__link" href="#">이달의 사회복지관</a>
+            </div>
+
+            <div class="mega__col">
+              <div class="mega__title">게시판</div>
+              <a class="mega__link" href="#notice">공지사항</a>
+              <a class="mega__link" href="#">협회활동소식&보도자료</a>
+              <a class="mega__link" href="#">발간자료</a>
+              <a class="mega__link" href="#">지원사업 안내</a>
+              <a class="mega__link" href="#">구인게시판</a>
+            </div>
+
+            <div class="mega__col">
+              <div class="mega__title">신청 발급</div>
+              <a class="mega__link" href="#">버스이용 신청</a>
+              <a class="mega__link" href="#">교육 신청</a>
+              <a class="mega__link" href="#">후원물품 신청</a>
+            </div>
+
+            <div class="mega__col">
+              <div class="mega__title">자료실</div>
+              <a class="mega__link" href="#">사진자료</a>
+              <a class="mega__link" href="#">영상자료</a>
+              <a class="mega__link" href="#">일반자료</a>
+              <a class="mega__link" href="#">사회복지 Q&A</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </div>
+
+    <button class="nav__hamburger" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      ☰
+    </button>
+  </div>
+</nav>
+
 
     <!-- Mobile Drawer -->
     <div class="drawer" aria-hidden="true">
