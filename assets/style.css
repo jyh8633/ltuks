@@ -473,20 +473,24 @@ img{ max-width:100%; display:block; }
   .mega{ display:none; }
 }
 
+/* ===== 다음카페 스타일 느낌의 드롭다운 ===== */
+
 .gnb{
   display:flex;
-  gap: 28px;
+  gap: 32px;
   list-style:none;
   margin:0;
   padding:0;
 }
 
+.gnb__item{ position:relative; }
+
 .gnb__link{
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
   color:#222;
-  padding: 8px 2px;
-  white-space: nowrap;
+  padding: 10px 2px;
+  display:inline-block;
 }
 
 .gnb__link:hover{
@@ -494,6 +498,57 @@ img{ max-width:100%; display:block; }
   text-decoration: underline;
   text-underline-offset: 8px;
 }
+
+/* 드롭다운 박스 */
+.mega{
+  position:absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 220px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  padding: 10px;
+  display:none;
+  z-index:100;
+}
+
+/* 드롭다운 링크 */
+.mega a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding: 10px 10px;
+  border-radius:10px;
+  color:#333;
+  font-weight:700;
+  font-size:.95rem;
+}
+
+/* (선택) 카페 메뉴처럼 “아이콘 느낌” */
+.mega a::before{
+  content:"≡";
+  font-size:.85rem;
+  opacity:.45;
+}
+
+.mega a:hover{
+  background:#f6f6f6;
+  color:#ff6a00;
+}
+
+/* hover/focus 시 펼치기 */
+.gnb__item:hover .mega,
+.gnb__item:focus-within .mega{
+  display:block;
+}
+
+/* 모바일에서는 hover 드롭다운 끄기 */
+@media (max-width: 900px){
+  .mega{ display:none !important; }
+}
+
 
 /* N 뱃지 */
 .badge{
