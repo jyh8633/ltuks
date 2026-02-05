@@ -561,3 +561,60 @@ img{ max-width:100%; display:block; }
   padding:2px 5px;
   line-height:1;
 }
+/* ===== 드롭다운(메가메뉴) 깨짐 해결: 컬럼형 정렬 + 줄바꿈 방지 ===== */
+
+.gnb__item{ position: relative; }
+
+.mega{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 92vw);     /* ✅ 폭 넓게 */
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  padding: 16px;
+  display: none;
+  z-index: 999;
+}
+
+/* ✅ 핵심: 드롭다운 내부를 컬럼으로 정리 */
+.mega__grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));  /* 3컬럼 */
+  gap: 10px 14px;
+}
+
+.mega a{
+  display: block;          /* ✅ flex 쓰지 말기 */
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;     /* ✅ 줄바꿈 금지 */
+}
+
+.mega a:hover{
+  background: #f5f5f5;
+  color: #ff6a00;
+  border-color: #ffe2cc;
+}
+
+/* hover/focus 시 펼치기 */
+.gnb__item:hover .mega,
+.gnb__item:focus-within .mega{
+  display: block;
+}
+
+/* 메뉴 글자 줄바꿈 방지 */
+.gnb__link{ white-space: nowrap; }
+
+/* 모바일에서는 hover 드롭다운 끄기 */
+@media (max-width: 900px){
+  .mega{ display:none !important; }
+}
+
