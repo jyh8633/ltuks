@@ -80,7 +80,7 @@ img{ max-width:100%; display:block; }
 .lang__menu li:hover{ background:rgba(255,255,255,.08); }
 
 .header{
-  position:sticky;
+  position:static;
   top:0;
   z-index:40;
   background: rgba(246,248,251,.9);
