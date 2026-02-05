@@ -20,91 +20,63 @@
     </a>
 
     <!-- 메뉴를 같은 줄로 -->
-<nav class="nav" aria-label="주요 메뉴">
+<nav class="nav" aria-label="주요 메뉴" id="mainNav">
   <ul class="gnb gnb--mega">
-
-    <li class="gnb__item">
-      <a class="gnb__link" href="#">협회소개</a>
-
-      <div class="megaBar">
-        <div class="container megaBar__inner">
-          <div class="megaCol megaCol--active">
-            <div class="megaCol__title">협회소개</div>
-            <a href="#">인사말</a>
-            <a href="#">비전/미션</a>
-            <a href="#">연혁</a>
-            <a href="#">조직</a>
-            <a href="#">주요사업</a>
-            <a href="#contact">찾아오시는길</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li class="gnb__item">
-      <a class="gnb__link" href="#">사회복지관</a>
-
-      <div class="megaBar">
-        <div class="container megaBar__inner">
-          <div class="megaCol megaCol--active">
-            <div class="megaCol__title">사회복지관</div>
-            <a href="#">사회복지관이란?</a>
-            <a href="#">인천시사회복지관협회는?</a>
-            <a href="#">회원기관 현황</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li class="gnb__item">
-      <a class="gnb__link" href="#">협회활동</a>
-
-      <div class="megaBar">
-        <div class="container megaBar__inner">
-          <div class="megaCol megaCol--active">
-            <div class="megaCol__title">협회활동</div>
-            <a href="#notice">공지사항</a>
-            <a href="#">협회활동 소식</a>
-            <a href="#">보도자료</a>
-            <a href="#">포토갤러리</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li class="gnb__item">
-      <a class="gnb__link" href="#">커뮤니티</a>
-
-      <div class="megaBar">
-        <div class="container megaBar__inner">
-          <div class="megaCol megaCol--active">
-            <div class="megaCol__title">커뮤니티</div>
-            <a href="#">자유게시판</a>
-            <a href="#">구인/구직</a>
-            <a href="#">Q&A</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li class="gnb__item">
-      <a class="gnb__link" href="#">자료실</a>
-
-      <div class="megaBar">
-        <div class="container megaBar__inner">
-          <div class="megaCol megaCol--active">
-            <div class="megaCol__title">자료실</div>
-            <a href="#">서식자료</a>
-            <a href="#">교육자료</a>
-            <a href="#gallery">사진자료</a>
-            <a href="#">영상자료</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
+    <li class="gnb__item" data-key="about"><a class="gnb__link" href="#">협회소개</a></li>
+    <li class="gnb__item" data-key="center"><a class="gnb__link" href="#">사회복지관</a></li>
+    <li class="gnb__item" data-key="activity"><a class="gnb__link" href="#">협회활동</a></li>
+    <li class="gnb__item" data-key="community"><a class="gnb__link" href="#">커뮤니티</a></li>
+    <li class="gnb__item" data-key="archive"><a class="gnb__link" href="#">자료실</a></li>
   </ul>
+
+  <!-- ✅ 공용 메가메뉴(한 번에 전체 컬럼 표시) -->
+  <div class="megaBar" id="megaBar" aria-hidden="true">
+    <div class="container megaBar__inner">
+
+      <div class="megaCol" data-key="about">
+        <div class="megaCol__title">협회소개</div>
+        <a href="#">인사말</a>
+        <a href="#">비전·미션</a>
+        <a href="#">연혁</a>
+        <a href="#">조직</a>
+        <a href="#">주요사업</a>
+        <a href="#contact">찾아오시는길</a>
+      </div>
+
+      <div class="megaCol" data-key="center">
+        <div class="megaCol__title">사회복지관</div>
+        <a href="#">사회복지관이란?</a>
+        <a href="#">인천시사회복지관협회는?</a>
+        <a href="#">회원기관 현황</a>
+      </div>
+
+      <div class="megaCol" data-key="activity">
+        <div class="megaCol__title">협회활동</div>
+        <a href="#notice">공지사항</a>
+        <a href="#">협회활동 소식</a>
+        <a href="#">보도자료</a>
+        <a href="#gallery">포토갤러리</a>
+      </div>
+
+      <div class="megaCol" data-key="community">
+        <div class="megaCol__title">커뮤니티</div>
+        <a href="#">자유게시판</a>
+        <a href="#">구인·구직</a>
+        <a href="#">Q&A</a>
+      </div>
+
+      <div class="megaCol" data-key="archive">
+        <div class="megaCol__title">자료실</div>
+        <a href="#">서식자료</a>
+        <a href="#">교육자료</a>
+        <a href="#">일반자료</a>
+        <a href="#">영상자료</a>
+      </div>
+
+    </div>
+  </div>
 </nav>
+
 
 
   </div>
