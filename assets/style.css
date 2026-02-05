@@ -409,3 +409,9 @@ img{ max-width:100%; display:block; }
   .nav__hamburger{ display:inline-flex; }
   .topbar__right{ gap:8px; }
 }
+
+.brand__logo {
+  height: 56px;        /* 필요하면 48~64px 사이로 조절 */
+  width: auto;
+  display: block;
+}
