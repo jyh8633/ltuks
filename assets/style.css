@@ -413,233 +413,25 @@ img{ max-width:100%; display:block; }
   display: block;
 }
 
-/* Mega menu */
-.nav__inner--mega { position: relative; }
+/* ================================
+   Mega Menu FINAL (전체 컬럼 한 번에 표시 / hover only)
+   ================================ */
 
-.mega { position: relative; display:flex; gap:18px; align-items:center; }
-
-.mega__panel{
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  background:#fff;
-  border-top: 1px solid var(--line);
-  box-shadow: 0 18px 40px rgba(0,0,0,.12);
-  padding: 22px 0;
-  display:none;
-  z-index:60;
-}
-
-.mega:hover .mega__panel,
-.mega.is-open .mega__panel{
-  display:block;
-}
-
-.mega__panelInner{ padding: 0 18px; }
-
-.mega__grid{
-  display:grid;
-  grid-template-columns: repeat(5, minmax(0,1fr));
-  gap: 24px;
-}
-
-.mega__col{
-  padding: 6px 10px;
-  border-left: 1px solid #f1f5f9;
-}
-.mega__col:first-child{ border-left: 0; }
-
-.mega__title{
-  font-weight: 900;
-  font-size: 1.05rem;
-  padding: 8px 0 10px;
-}
-
-.mega__link{
-  display:block;
-  padding: 8px 0;
-  color:#374151;
-  font-weight: 600;
-  font-size: .98rem;
-}
-.mega__link:hover{
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-/* 모바일에서는 hover 메가메뉴 숨김 (햄버거로만) */
-@media (max-width: 620px){
-  .mega{ display:none; }
-}
-
-/* ===== 다음카페 스타일 느낌의 드롭다운 ===== */
-
-.gnb{
-  display:flex;
-  gap: 32px;
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-
-.gnb__item{ position:relative; }
-
-.gnb__link{
-  font-weight: 800;
-  font-size: 1rem;
-  color:#222;
-  padding: 10px 2px;
-  display:inline-block;
-}
-
-.gnb__link:hover{
-  color:#ff6a00;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
-
-/* 드롭다운 박스 */
-.mega{
-  position:absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  min-width: 220px;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  box-shadow: 0 12px 28px rgba(0,0,0,.10);
-  padding: 10px;
-  display:none;
-  z-index:100;
-}
-
-/* 드롭다운 링크 */
-.mega a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding: 10px 10px;
-  border-radius:10px;
-  color:#333;
-  font-weight:700;
-  font-size:.95rem;
-}
-
-/* (선택) 카페 메뉴처럼 “아이콘 느낌” */
-.mega a::before{
-  content:"≡";
-  font-size:.85rem;
-  opacity:.45;
-}
-
-.mega a:hover{
-  background:#f6f6f6;
-  color:#ff6a00;
-}
-
-/* ✅ 원하는 동작: hover시에만 열리고, 클릭으로 고정되지 않게 */
-.gnb__item:hover .mega{
+/* 로고 크기 */
+.brand__logo{
+  height: 56px;
+  width: auto;
   display: block;
 }
 
-/* 클릭(포커스)로 고정되는 현상 방지 */
-.gnb__item:focus-within .mega{
-  display: none;
+/* nav가 메가패널의 기준이 되도록 */
+.nav{
+  position: relative;
+  border-top: 0;
+  background: transparent;
 }
 
-/* 드롭다운이 닫히지 않게 간격 줄이기 */
-.mega{
-  top: calc(100% + 4px);
-}
-
-/* (선택) 메뉴-드롭다운 사이 hover 브릿지 */
-.gnb__item::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  top: 100%;
-  height: 10px;
-}
-
-
-/* 모바일에서는 hover 드롭다운 끄기 */
-@media (max-width: 900px){
-  .mega{ display:none !important; }
-}
-
-
-/* N 뱃지 */
-.badge{
-  margin-left:4px;
-  font-size:.7rem;
-  font-weight:900;
-  color:#fff;
-  background:#ff6a00;
-  border-radius:999px;
-  padding:2px 5px;
-  line-height:1;
-}
-/* ===== 드롭다운(메가메뉴) 깨짐 해결: 컬럼형 정렬 + 줄바꿈 방지 ===== */
-
-.gnb__item{ position: relative; }
-
-.mega{
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(720px, 92vw);     /* ✅ 폭 넓게 */
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0,0,0,.10);
-  padding: 16px;
-  display: none;
-  z-index: 999;
-}
-
-/* ✅ 핵심: 드롭다운 내부를 컬럼으로 정리 */
-.mega__grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));  /* 3컬럼 */
-  gap: 10px 14px;
-}
-
-.mega a{
-  display: block;          /* ✅ flex 쓰지 말기 */
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #f0f0f0;
-  background: #fafafa;
-  font-weight: 700;
-  color: #333;
-  white-space: nowrap;     /* ✅ 줄바꿈 금지 */
-}
-
-.mega a:hover{
-  background: #f5f5f5;
-  color: #ff6a00;
-  border-color: #ffe2cc;
-}
-
-/* hover/focus 시 펼치기 */
-.gnb__item:hover .mega,
-.gnb__item:focus-within .mega{
-  display: block;
-}
-
-/* 메뉴 글자 줄바꿈 방지 */
-.gnb__link{ white-space: nowrap; }
-
-/* 모바일에서는 hover 드롭다운 끄기 */
-@media (max-width: 900px){
-  .mega{ display:none !important; }
-}
-
-/* ===== 전체 폭 메가메뉴(캡처 스타일) / hover 전용 ===== */
-
+/* 상단 메뉴(gnb) */
 .gnb--mega{
   display:flex;
   align-items:center;
@@ -649,10 +441,7 @@ img{ max-width:100%; display:block; }
   padding:0;
 }
 
-/* 각 상단 메뉴 */
-.gnb__item{
-  position: relative;
-}
+.gnb__item{ position: relative; }
 
 .gnb__link{
   display:inline-flex;
@@ -665,35 +454,40 @@ img{ max-width:100%; display:block; }
 
 .gnb__link:hover{
   color:#ff6a00;
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
 
-/* ✅ 전체폭 패널 */
+/* ✅ 전체 컬럼 메가패널(한 번에 다 보임) */
 .megaBar{
-  position: fixed;            /* 화면 전체폭 느낌 */
+  position: absolute;          /* nav 바로 아래 */
   left: 0;
   right: 0;
-  top: var(--megaTop, 76px);  /* 헤더 높이에 맞춰야 함(아래에서 JS없이 보정 팁 제공) */
+  top: 100%;
   background: #fff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   box-shadow: 0 18px 36px rgba(0,0,0,.10);
   padding: 18px 0;
-  display: none;
+  display: none;               /* 기본 닫힘 */
   z-index: 999;
 }
 
+/* 열림 상태(클래스 제어) */
+.megaBar.is-open{ display:block; }
+
 /* 내부 폭 */
 .megaBar__inner{
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)); /* 필요하면 4~6 조절 */
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
 }
 
-/* 컬럼 박스 */
+/* 컬럼 */
 .megaCol{
   border-left: 1px solid #eee;
-  padding: 4px 0 4px 16px;
-  min-height: 220px;
+  padding: 6px 0 6px 16px;
+  min-height: 240px;
 }
 
 .megaCol:first-child{
@@ -701,21 +495,13 @@ img{ max-width:100%; display:block; }
   padding-left: 0;
 }
 
-/* 왼쪽 컬럼 강조(캡처의 주황 영역 느낌) */
-.megaCol--active{
-  background: #ff6a00;
-  color: #fff;
-  border-radius: 12px;
-  padding: 14px 14px;
-  border-left: 0;
-}
-
 .megaCol__title{
   font-weight: 900;
   margin-bottom: 10px;
-  opacity: .95;
+  color:#111;
 }
 
+/* 컬럼 링크 */
 .megaCol a{
   display:block;
   padding: 8px 10px;
@@ -725,41 +511,34 @@ img{ max-width:100%; display:block; }
   white-space: nowrap;
 }
 
-.megaCol--active a{
+.megaCol a:hover{
+  background: #f6f6f6;
+  color:#ff6a00;
+}
+
+/* ✅ 활성 컬럼(주황 강조) */
+.megaCol.is-active{
+  background: #ff6a00;
+  border-radius: 12px;
+  padding: 14px;
+  border-left: 0;
+}
+
+.megaCol.is-active .megaCol__title,
+.megaCol.is-active a{
   color:#fff;
 }
 
-.megaCol a:hover{
-  background: #f6f6f6;
-  color: #ff6a00;
-}
-
-.megaCol--active a:hover{
+.megaCol.is-active a:hover{
   background: rgba(255,255,255,.14);
   color:#fff;
 }
 
-/* ✅ 핵심: hover시에만 열기 (클릭/포커스로 고정되지 않게) */
-.gnb__item:hover .megaBar{
-  display: block;
-}
+/* 클릭/포커스로 고정되는 현상 방지 */
+.gnb__item:focus-within .megaBar{ display:none; }
 
-/* 클릭으로 고정되는 현상 방지 */
-.gnb__item:focus-within .megaBar{
-  display: none;
-}
-
-/* 메뉴에서 패널로 이동할 때 닫히지 않게 브릿지 */
-.gnb__item::after{
-  content:"";
-  position:absolute;
-  left: -10px;
-  right: -10px;
-  top: 100%;
-  height: 14px;
-}
-
-/* 모바일에선 hover 메가메뉴 끄기 */
+/* 모바일에서는 hover 메가메뉴 끄기(추후 햄버거로 별도 구현) */
 @media (max-width: 900px){
   .megaBar{ display:none !important; }
 }
+
