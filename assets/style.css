@@ -415,3 +415,63 @@ img{ max-width:100%; display:block; }
   width: auto;
   display: block;
 }
+
+/* Mega menu */
+.nav__inner--mega { position: relative; }
+
+.mega { position: relative; display:flex; gap:18px; align-items:center; }
+
+.mega__panel{
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  background:#fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  padding: 22px 0;
+  display:none;
+  z-index:60;
+}
+
+.mega:hover .mega__panel,
+.mega.is-open .mega__panel{
+  display:block;
+}
+
+.mega__panelInner{ padding: 0 18px; }
+
+.mega__grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 24px;
+}
+
+.mega__col{
+  padding: 6px 10px;
+  border-left: 1px solid #f1f5f9;
+}
+.mega__col:first-child{ border-left: 0; }
+
+.mega__title{
+  font-weight: 900;
+  font-size: 1.05rem;
+  padding: 8px 0 10px;
+}
+
+.mega__link{
+  display:block;
+  padding: 8px 0;
+  color:#374151;
+  font-weight: 600;
+  font-size: .98rem;
+}
+.mega__link:hover{
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* 모바일에서는 hover 메가메뉴 숨김 (햄버거로만) */
+@media (max-width: 620px){
+  .mega{ display:none; }
+}
